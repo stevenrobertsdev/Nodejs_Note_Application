@@ -7,7 +7,7 @@ const   fs = require('fs'),
 const notes = require('./notes.js');
 
 const argv = yargs.argv;
-var command = process.argv[2];
+var command = argv._[0];
 
  if(command === 'add') {
      notes.addNote(argv.title, argv.body);
@@ -20,6 +20,3 @@ var command = process.argv[2];
  } else {
      console.log("Command not regonised");
  }
-
- console.log('Process:', process.argv);
- console.log('Yargs:', argv);
