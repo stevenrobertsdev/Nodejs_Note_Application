@@ -16,6 +16,13 @@ var printNote = (title, body) => {
     console.log('------------');
 }
 
+var printNotFound = (a) => {
+    if(!a) {a = "Note not found."};
+    console.log('------------');
+    console.log(a);
+    console.log('------------');
+};
+
  if(command === 'add') {
      var note = notes.addNote(argv.title, argv.body);
      
@@ -23,9 +30,7 @@ var printNote = (title, body) => {
         printNote(note.title,note.body);
         
      } else {
-        console.log('------------');
-        console.log("Note already exists, please change the title.")
-        console.log('------------');
+        printNotFound("Note already exists, please change the title.")
      }
  } 
  
@@ -37,9 +42,7 @@ var printNote = (title, body) => {
             printNote(allNotes[i].title, allNotes[i].body);
          }
      } else {
-        console.log('------------');
-         console.log("No notes available.")
-         console.log('------------');
+        printNotFound();
      }     
  } 
  
@@ -52,9 +55,7 @@ var printNote = (title, body) => {
         console.log('------------');
         
      } else {
-        console.log('------------');
-        console.log("Note was not found.")
-        console.log('------------');
+        printNotFound();
      }
  } 
  
@@ -63,9 +64,7 @@ var printNote = (title, body) => {
    if(note) {
         printNote(note.title, note.body);
    } else {
-        console.log('------------');
-        console.log("Note not found.")
-        console.log('------------');
+        printNotFound();
    }
  } 
  
