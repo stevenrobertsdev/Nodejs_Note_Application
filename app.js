@@ -5,8 +5,6 @@ const   fs = require('fs'),
         _ = require('lodash'),
         notes = require('./notes.js');
 
-
-
 // var user = os.userInfo();
 
 // fs.appendFile('greetings.txt', user.username , (err) => {
