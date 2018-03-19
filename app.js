@@ -9,8 +9,26 @@ const notes = require('./notes.js');
 const argv = yargs.argv;
 var command = argv._[0];
 
+var printNote = (title, body) => {
+    console.log('------------');
+    console.log('Note successfully created!')
+    console.log(`Title: ${title}`);
+    console.log(`Body: ${body}`);
+    console.log('------------');
+}
+
  if(command === 'add') {
-     notes.addNote(argv.title, argv.body);
+     var note = notes.addNote(argv.title, argv.body);
+     
+     if(note) {
+        printNote(note.title,note.body);
+        
+     } else {
+        console.log('------------');
+        console.log("Note already exists, please change the title.")
+        console.log('------------');
+     }
+
  } else if(command === 'list') {
      notes.getAll();
  } else if(command === 'remove') {

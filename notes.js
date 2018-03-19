@@ -17,7 +17,6 @@ var saveNotes = (notes) => {
     })
 };
 
-
 var addNote = (title, body) => {
     var notes = fetchNotes();
     var note = {
@@ -25,18 +24,14 @@ var addNote = (title, body) => {
         body
     };
 
-    
-
     var duplicateNotes = notes.filter((note)=> {
         return note.title === title;
     });
 
-    if(duplicateNotes.length > 0) {
-        console.log('A note with this title already exists, please choose a different title.');
-
-    } else {
+    if(duplicateNotes.length === 0) {
         notes.push(note);
         saveNotes(notes);
+        return note;
     }
 };
 
@@ -49,7 +44,11 @@ var getNote = (title) => {
 };
 
 var removeNote = (title) => {
-    console.log(`Removing the note: ${title}`);
+    var notes = fetchNotes();
+    var filteredNotes = notes.filter((note) => {
+        return note.title !== title;
+    })
+    saveNotes(filteredNotes);
 };
 
 module.exports = {
