@@ -11,7 +11,6 @@ var command = argv._[0];
 
 var printNote = (title, body) => {
     console.log('------------');
-    console.log('Note successfully created!')
     console.log(`Title: ${title}`);
     console.log(`Body: ${body}`);
     console.log('------------');
@@ -28,11 +27,14 @@ var printNote = (title, body) => {
         console.log("Note already exists, please change the title.")
         console.log('------------');
      }
-
  } 
  
  else if(command === 'list') {
-     notes.getAll();
+     var allNotes = notes.getAll();
+     
+     for(var i = 0; i < allNotes.length; i++) {
+        printNote(allNotes[i].title, allNotes[i].body);
+     }
  } 
  
  else if(command === 'remove') {
@@ -45,24 +47,21 @@ var printNote = (title, body) => {
         
      } else {
         console.log('------------');
-        console.log("Note not found.")
+        console.log("Note was not found.")
         console.log('------------');
      }
 
  } 
  
  else if(command === 'read') {
-    var note = notes.getNote(argv.title);
-
-    if(note) {
-        printNote(note.title,note.body);
-        
-     } else {
+   var note = notes.getNote(argv.title);
+   if(note) {
+        printNote(note.title, note.body);
+   } else {
         console.log('------------');
-        console.log("Note already exists, please change the title.")
+        console.log("Note was not found.")
         console.log('------------');
-     }
-
+   }
  } 
  
  else {
