@@ -1,14 +1,3 @@
-// var obj = {
-//     name: "Steven"
-// };
-// var stringObj = JSON.stringify(obj);
-// console.log(stringObj);
-
-// var personString = '{"name": "Steven Roberts", "age": 24}';
-// var personObj = JSON.parse(personString);
-// console.log(typeof personObj);
-// console.log(personObj);
-
 const fs = require('fs');
 
 var originalNote = {
