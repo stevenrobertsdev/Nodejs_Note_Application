@@ -6,7 +6,6 @@ const   fs = require('fs'),
 
 console.log(notes.add(9,-2));
 
-
 // var user = os.userInfo();
 
 // fs.appendFile('greetings.txt', user.username , (err) => {

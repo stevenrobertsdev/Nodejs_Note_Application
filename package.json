@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/stevenrobertsdev/Nodejs_Note_Application/issues"
   },
-  "homepage": "https://github.com/stevenrobertsdev/Nodejs_Note_Application#readme"
+  "homepage": "https://github.com/stevenrobertsdev/Nodejs_Note_Application#readme",
+  "dependencies": {
+    "lodash": "^4.17.5"
+  }
 }
