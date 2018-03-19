@@ -8,4 +8,3 @@ var user = os.userInfo();
 fs.appendFile('greetings.txt', user.username , (err) => {
     if(err) throw err;
 });
-
