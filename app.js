@@ -1,7 +1,8 @@
 console.log("Starting app.js");
 
 const   fs = require('fs'),
-        _ = require('lodash');
+        _ = require('lodash'),
+        yargs = require('yargs');
 
 const notes = require('./notes.js');
 
@@ -18,3 +19,5 @@ var command = process.argv[2];
  } else {
      console.log("Command not regonised");
  }
+
+ console.log(process.argv);
