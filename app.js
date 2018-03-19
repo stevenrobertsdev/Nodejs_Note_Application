@@ -29,12 +29,42 @@ var printNote = (title, body) => {
         console.log('------------');
      }
 
- } else if(command === 'list') {
+ } 
+ 
+ else if(command === 'list') {
      notes.getAll();
- } else if(command === 'remove') {
-    notes.removeNote(argv.title);
- } else if(command === 'read') {
-    notes.getNote(argv.title);
- } else {
+ } 
+ 
+ else if(command === 'remove') {
+    var note = notes.removeNote(argv.title);
+
+    if(note) {
+        console.log('------------');
+        console.log(`${argv.title} has been removed.`)
+        console.log('------------');
+        
+     } else {
+        console.log('------------');
+        console.log("Note not found.")
+        console.log('------------');
+     }
+
+ } 
+ 
+ else if(command === 'read') {
+    var note = notes.getNote(argv.title);
+
+    if(note) {
+        printNote(note.title,note.body);
+        
+     } else {
+        console.log('------------');
+        console.log("Note already exists, please change the title.")
+        console.log('------------');
+     }
+
+ } 
+ 
+ else {
      console.log("Command not regonised");
  }
