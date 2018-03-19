@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_note_application",
+  "version": "1.0.0",
+  "description": "An application built with Nodejs that allows the user to create, store, list and remove notes through the command line.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenrobertsdev/Nodejs_Note_Application.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenrobertsdev/Nodejs_Note_Application/issues"
+  },
+  "homepage": "https://github.com/stevenrobertsdev/Nodejs_Note_Application#readme"
+}
