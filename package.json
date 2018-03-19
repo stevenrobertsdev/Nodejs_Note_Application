@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/stevenrobertsdev/Nodejs_Note_Application#readme",
   "dependencies": {
-    "lodash": "^4.17.5"
+    "lodash": "^4.17.5",
+    "nodemon": "^1.17.2"
   }
 }
