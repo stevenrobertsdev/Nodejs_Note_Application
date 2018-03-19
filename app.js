@@ -4,8 +4,11 @@ const   fs = require('fs'),
         os = require('os'),
         notes = require('./notes.js');
 
-var user = os.userInfo();
+console.log(notes.add(9,-2));
 
-fs.appendFile('greetings.txt', user.username , (err) => {
-    if(err) throw err;
-});
+
+// var user = os.userInfo();
+
+// fs.appendFile('greetings.txt', user.username , (err) => {
+//     if(err) throw err;
+// });
