@@ -12,11 +12,11 @@ var command = process.argv[2];
  if(command === 'add') {
      notes.addNote(argv.title, argv.body);
  } else if(command === 'list') {
-     console.log("List all notes");
+     notes.getAll();
  } else if(command === 'remove') {
-    console.log('Removing a note');
+    notes.removeNote(argv.title);
  } else if(command === 'read') {
-    console.log('reading a note');
+    notes.getNote(argv.title);
  } else {
      console.log("Command not regonised");
  }
