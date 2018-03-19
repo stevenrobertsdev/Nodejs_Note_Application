@@ -31,10 +31,16 @@ var printNote = (title, body) => {
  
  else if(command === 'list') {
      var allNotes = notes.getAll();
-     
-     for(var i = 0; i < allNotes.length; i++) {
-        printNote(allNotes[i].title, allNotes[i].body);
-     }
+
+     if(allNotes.length !== 0) {
+        for(var i = 0; i < allNotes.length; i++) {
+            printNote(allNotes[i].title, allNotes[i].body);
+         }
+     } else {
+        console.log('------------');
+         console.log("No notes available.")
+         console.log('------------');
+     }     
  } 
  
  else if(command === 'remove') {
@@ -50,7 +56,6 @@ var printNote = (title, body) => {
         console.log("Note was not found.")
         console.log('------------');
      }
-
  } 
  
  else if(command === 'read') {
@@ -59,7 +64,7 @@ var printNote = (title, body) => {
         printNote(note.title, note.body);
    } else {
         console.log('------------');
-        console.log("Note was not found.")
+        console.log("Note not found.")
         console.log('------------');
    }
  } 

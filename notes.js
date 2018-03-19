@@ -38,17 +38,15 @@ var addNote = (title, body) => {
 
 var getAll = () => {
     var notes = fetchNotes();
-    return notes;
+    return notes 
 };
 
 var getNote = (title) => {
     var notes = fetchNotes();
-    for(var i = 0; i < notes.length; i++) {
-            if(notes[i].title === title) {
-                return notes[i];
-            }
-    }
-
+    var filteredNotes = notes.filter((note) => {
+        return note.title === title;
+    });
+    return filteredNotes[0];
 };
 
 var removeNote = (title) => {
